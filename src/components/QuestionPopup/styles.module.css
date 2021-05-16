@@ -1,0 +1,23 @@
+.root {
+    min-width: 200px;
+    min-height: 200px;
+    text-align: center;
+    font-size: 22px;
+}
+
+.questions {
+    display: flex;
+    flex-direction: row;
+    min-width: 90%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.button {
+    margin: 4px;
+    background: rebeccapurple;
+    border-radius: 2px;
+    width: 45%;
+    min-height: 50px;
+    max-height: 200px;
+}

@@ -6,6 +6,8 @@ import {selectCurrentQuestion} from '../../entities/question';
 import {changePersonState} from '../../entities/person';
 import {ANSWERED, FAILED} from '../../constants';
 
+import * as styles from './styles.module.css';
+
 const PopupContent = ({currentQuestionId}) => {
     const question = useSelector((state) => state.question.collection[currentQuestionId]);
     const rightAnswer = question.rightAnswer;
@@ -30,20 +32,34 @@ const PopupContent = ({currentQuestionId}) => {
     }
 
     return (
-        <div>
+        <div className={styles.root}>
             <p>
                 {question.text}
             </p>
-            <div>
-                <button onClick={leftButtonClick}>
+            <div className={styles.questions}>
+                <button className={styles.button} onClick={leftButtonClick}>
                     {question.answers[0]}
                 </button>
-                <button onClick={rightButtonClick}>
+                <p>
+                    ИЛИ
+                </p>
+                <button className={styles.button}  onClick={rightButtonClick}>
                     {question.answers[1]}
                 </button>
             </div>
         </div>
     );
+};
+
+const customStyles = {
+    content : {
+        top                   : '50%',
+        left                  : '50%',
+        right                 : 'auto',
+        bottom                : 'auto',
+        marginRight           : '-50%',
+        transform             : 'translate(-50%, -50%)'
+    }
 };
 
 const QuestionPopup = () => {
@@ -56,6 +72,7 @@ const QuestionPopup = () => {
     return (
         <ReactModal
             isOpen={isOpen}
+            styles={customStyles}
         >
             {currentQuestionId && <PopupContent currentQuestionId={currentQuestionId} />}
         </ReactModal>
