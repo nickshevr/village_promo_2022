@@ -1,0 +1,17 @@
+html, body, #___gatsby {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    margin: 0px;
+}
+
+#gatsby-focus-wrapper, #main {
+    height: 100%;
+    width: 100%;
+}
+
+#main {
+    background: linear-gradient(to right top, purple, darkslateblue);
+}

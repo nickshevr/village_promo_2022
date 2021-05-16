@@ -2,5 +2,5 @@ module.exports = {
   siteMetadata: {
     title: "VillagePromo",
   },
-  plugins: ["gatsby-plugin-postcss", "gatsby-plugin-gatsby-cloud"],
+  plugins: ["gatsby-plugin-gatsby-cloud"],
 };

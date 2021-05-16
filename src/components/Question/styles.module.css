@@ -1,0 +1,21 @@
+.root {
+    min-width: 24%;
+}
+
+.text {
+    text-align: center;
+    font-size: 22px;
+}
+
+.initial {
+    background: transparent;
+}
+
+.answered {
+    background: green;
+}
+
+.failed {
+    background: red;
+}
+
