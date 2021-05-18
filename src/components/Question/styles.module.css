@@ -3,11 +3,11 @@ button {
     padding: 2px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 480px) {
     .root {
-        width: 25vw;
-        height: 25vw;
-        margin: 2px;
+        width: 24vw;
+        height: 24vw;
+        margin: 1px;
     }
 
     .text {
@@ -16,7 +16,7 @@ button {
     }
 }
 
-@media (min-width: 600px) {
+@media (min-width: 480px) {
     .root {
         width: 20vh;
         height: 20vh;
