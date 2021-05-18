@@ -1,5 +1,6 @@
 .root {
-    min-width: 24%;
+    width: 25vw;
+    height: 25vw;
 }
 
 .text {
@@ -12,10 +13,10 @@
 }
 
 .answered {
-    background: green;
+    background: #ed7263;
 }
 
 .failed {
-    background: red;
+    background: #2c1f4e;
 }
-
+  

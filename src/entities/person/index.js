@@ -17,12 +17,14 @@ for (let i = 0; i < COUNT; i++) {
     }
 }
 
+const INITIAL_STATE = {
+    collection: PersonState,
+    gameEnded: false,
+};
+
 export const personSlice = createSlice({
     name: 'person',
-    initialState: {
-        collection: PersonState,
-        gameEnded: false,
-    },
+    initialState: INITIAL_STATE,
     reducers: {
         changePersonState: (state, action) => {
             const {id, status} = action.payload;
@@ -46,10 +48,13 @@ export const personSlice = createSlice({
                 state.gameEnded = gameEndedRow || gameEndedColumn;
             }
         },
+        returnInitialState: () => {
+            return INITIAL_STATE;
+        }
     },
 })
 
-export const { changePersonState } = personSlice.actions
+export const { changePersonState, returnInitialState } = personSlice.actions
 
 export default personSlice.reducer
 

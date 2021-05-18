@@ -1,18 +1,18 @@
-html, body, #___gatsby {
-    height: 100vh;
-    width: 100vw;
+#___gatsby {
+    padding: 20px;
 }
 
 body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 0px;
     overflow: hidden;
-}
-
-#gatsby-focus-wrapper, #main {
     height: 100vh;
     width: 100vw;
 }
 
-#main {
-    background: linear-gradient(to right top, purple, darkslateblue);
+p {
+    color: white;
+    font-size: 22px;
 }

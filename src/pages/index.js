@@ -6,6 +6,9 @@ import Row from '../components/Row';
 import Question from '../components/Question';
 import QuestionPopup from '../components/QuestionPopup';
 import WinPopup from '../components/WinPopup';
+import Background from '../components/Background';
+
+import RestartButton from '../containers/restartButton';
 
 import './styles.css'
 
@@ -22,6 +25,7 @@ const IndexPage = () => {
 
     return (
       <div id='main'>
+          <Background />
           <Content>
               {
                   rows.map((data, i) =>
@@ -35,6 +39,9 @@ const IndexPage = () => {
                       </Row>
                   )
               }
+            <div style={{'marginTop': '20px'}}>
+                <RestartButton />  
+            </div>
           </Content>
           <QuestionPopup />
           <WinPopup />

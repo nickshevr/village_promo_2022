@@ -17,14 +17,22 @@
   "dependencies": {
     "@reduxjs/toolkit": "^1.5.1",
     "classnames": "^2.3.1",
-    "gatsby": "^3.4.1",
+    "gatsby": "^3.5.0",
+    "gatsby-image": "^3.5.0",
     "gatsby-plugin-gatsby-cloud": "^2.5.0",
+    "gatsby-plugin-image": "^1.5.0",
     "gatsby-plugin-postcss": "^4.5.0",
+    "gatsby-plugin-sharp": "^3.5.0",
+    "gatsby-plugin-styled-components": "^4.5.0",
+    "gatsby-source-filesystem": "^3.5.0",
+    "gatsby-transformer-sharp": "^3.5.0",
     "postcss": "^8.2.15",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-modal": "^3.13.1",
     "react-redux": "^7.2.4",
-    "redux": "^4.1.0"
+    "redux": "^4.1.0",
+    "socket.io": "^4.1.2",
+    "styled-components": "^5.3.0"
   }
 }
