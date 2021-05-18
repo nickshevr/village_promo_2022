@@ -5,6 +5,18 @@ import {useSelector} from 'react-redux';
 import Text from '../Text';
 import {customStyles} from '../QuestionPopup';
 
+const gradientStyles = {
+    background: '',
+    backgroundImage: '-webkit-linear-gradient( -115deg, rgb(54,40,66) 0%, rgb(146,77,83) 42%, rgb(237,114,99) 80%, rgb(158,82,85) 91%, rgb(79,50,70) 100%)',
+};
+
+const merged = {
+    content: {
+        ...customStyles.content,
+        ...gradientStyles,
+    },
+};
+
 const WinPopup = () => {
     const gameEnded = useSelector((state) => state.person.gameEnded);
     const style = {
@@ -19,10 +31,10 @@ const WinPopup = () => {
     return (
         <ReactModal
             isOpen={gameEnded}
-            style={customStyles}
+            style={merged}
         >
         <div style={style}>
-            <Text>
+            <Text theme='white'>
                 Бинго! 
                 <br />
                 <br />
