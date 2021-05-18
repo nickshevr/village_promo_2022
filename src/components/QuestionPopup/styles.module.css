@@ -1,8 +1,10 @@
 .root {
-    min-width: 200px;
-    min-height: 200px;
-    text-align: center;
-    font-size: 22px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
 }
 
 .questions {
@@ -10,6 +12,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    align-items: center;
 }
 
 .button {

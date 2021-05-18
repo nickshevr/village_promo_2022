@@ -25,6 +25,7 @@ for (let i = 0; i < COUNT; i++) {
 const INITIAL_STATE = {
     collection: PersonState,
     gameEnded: false,
+    gameStarted: false,
 };
 
 export const personSlice = createSlice({
@@ -35,6 +36,7 @@ export const personSlice = createSlice({
             const {id, status} = action.payload;
 
             state.collection[id].status = status;
+            state.gameStarted = true;
 
             const [row, column] = id.split('_');
 

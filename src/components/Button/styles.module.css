@@ -1,6 +1,6 @@
 .root {
     border-radius: 20px;
-    width: 300px;
-    height: 100px;
+    min-width: 25vw;
+    height: 10vh;
     background-color: rgb(237, 114, 99);
 }

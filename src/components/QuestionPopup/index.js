@@ -42,7 +42,7 @@ const PopupContent = ({currentQuestionId}) => {
             </Text>
             <div className={styles.questions}>
                 <button className={styles.button} onClick={leftButtonClick}>
-                    <Text size='s' theme='white'>
+                    <Text size='l' theme='white'>
                         {question.answers[0]}
                     </Text>
                 </button>
@@ -50,7 +50,7 @@ const PopupContent = ({currentQuestionId}) => {
                     или
                 </Text>
                 <button className={styles.button}  onClick={rightButtonClick}>
-                    <Text size='s' theme='white'>
+                    <Text size='l' theme='white'>
                         {question.answers[1]}
                     </Text>
                 </button>
@@ -74,14 +74,15 @@ const PopupContent = ({currentQuestionId}) => {
     );
 };
 
-const customStyles = {
+export const customStyles = {
     content : {
         top                   : '50%',
         left                  : '50%',
         right                 : 'auto',
         bottom                : 'auto',
         marginRight           : '-50%',
-        transform             : 'translate(-50%, -50%)'
+        transform             : 'translate(-50%, -50%)',
+        display : 'flex',
     }
 };
 
@@ -94,7 +95,7 @@ const QuestionPopup = () => {
     return (
         <ReactModal
             isOpen={isOpen}
-            styles={customStyles}
+            style={customStyles}
         >
             {currentQuestionId && <PopupContent currentQuestionId={currentQuestionId} />}
         </ReactModal>

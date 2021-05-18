@@ -12,10 +12,13 @@ for (let i = 0; i < COUNT; i++) {
     for (let j = 0; j < COUNT; j++) {
         const id = `${i}_${j}`;
         const person = queue.pop();
+        const prefix = person.gender
+            ? 'Кем была'
+            : 'Кем был';
 
         QuestionState[id] = {
             id,
-            text: `Кем был ${person.name}?`,
+            text: `${prefix} ${person.name.trim()}?`,
             answers: person.answers,
             rightAnswer: person.rightAnswer,
             notRight: person.notRight,
