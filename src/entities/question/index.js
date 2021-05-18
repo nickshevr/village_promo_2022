@@ -15,7 +15,7 @@ for (let i = 0; i < COUNT; i++) {
 
         QuestionState[id] = {
             id,
-            text: `Кем был ${person.name}`,
+            text: `Кем был ${person.name}?`,
             answers: person.answers,
             rightAnswer: person.rightAnswer,
             notRight: person.notRight,

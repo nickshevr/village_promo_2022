@@ -4,12 +4,14 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import {selectCurrentQuestion} from '../../entities/question';
 import {changePersonState} from '../../entities/person';
-import {ANSWERED, FAILED} from '../../constants';
+import {ANSWERED, FAILED, INITIAL} from '../../constants';
+import Text from '../Text';
 
 import * as styles from './styles.module.css';
 
 const PopupContent = ({currentQuestionId}) => {
     const question = useSelector((state) => state.question.collection[currentQuestionId]);
+    const person = useSelector((state) => state.person.collection[currentQuestionId]);
     const rightAnswer = question.rightAnswer;
     const dispatch = useDispatch();
 
@@ -19,7 +21,6 @@ const PopupContent = ({currentQuestionId}) => {
             : FAILED;
 
         dispatch(changePersonState({status, id: currentQuestionId}))
-        dispatch(selectCurrentQuestion(null))
     };
 
     const rightButtonClick = () => {
@@ -28,25 +29,47 @@ const PopupContent = ({currentQuestionId}) => {
             : FAILED;
 
         dispatch(changePersonState({status, id: currentQuestionId}))
-        dispatch(selectCurrentQuestion(null))
     }
+
+    const nextClick = () => {
+        dispatch(selectCurrentQuestion(null))
+    };
+
+    const choose = (
+        <React.Fragment>
+            <Text size='l'>
+                {question.text}
+            </Text>
+            <div className={styles.questions}>
+                <button className={styles.button} onClick={leftButtonClick}>
+                    <Text size='s' theme='white'>
+                        {question.answers[0]}
+                    </Text>
+                </button>
+                <Text size='l'>
+                    или
+                </Text>
+                <button className={styles.button}  onClick={rightButtonClick}>
+                    <Text size='s' theme='white'>
+                        {question.answers[1]}
+                    </Text>
+                </button>
+            </div>
+        </React.Fragment>
+    );
 
     return (
         <div className={styles.root}>
-            <p>
-                {question.text}
-            </p>
-            <div className={styles.questions}>
-                <button className={styles.button} onClick={leftButtonClick}>
-                    {question.answers[0]}
+            {person.status === FAILED && <Text>{question.notRight}</Text>}
+            {person.status === ANSWERED && <Text>Верно!</Text>}
+            {person.status !== INITIAL &&
+                <button className={styles.button}  onClick={nextClick}>
+                    <Text size='l' theme='white'>
+                        Продолжаем
+                    </Text>
                 </button>
-                <p>
-                    ИЛИ
-                </p>
-                <button className={styles.button}  onClick={rightButtonClick}>
-                    {question.answers[1]}
-                </button>
-            </div>
+            }
+            {person.status === INITIAL && choose}
         </div>
     );
 };
@@ -67,7 +90,6 @@ const QuestionPopup = () => {
     //const dispatch = useDispatch();
     const isOpen = currentQuestionId !== null;
 
-    //const close = () => dispatch(selectCurrentQuestion(null));
 
     return (
         <ReactModal
