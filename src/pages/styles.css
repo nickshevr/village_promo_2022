@@ -11,6 +11,7 @@ body {
 p {
     color: white;
     font-size: 22px;
+    font-family: Helvetica;
 }
 
 .ReactModal__Overlay {

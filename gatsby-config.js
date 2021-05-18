@@ -4,6 +4,15 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Helvetica`
+        ],
+        display: 'swap'
+      }
+    },
+    {
       resolve: `gatsby-plugin-gatsby-cloud`,
       options: {
         headers: {}, // option to add more headers. `Link` headers are transformed by the below criteria
