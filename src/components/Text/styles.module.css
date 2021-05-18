@@ -1,0 +1,19 @@
+.root {
+    font-family: 'Helvetica';
+}
+
+.black {
+    color: black;
+}
+
+.white {
+    color: white;
+}
+
+.s {
+    font-size: 2vw; 
+}
+
+.l {
+    font-size: 4vw;
+}

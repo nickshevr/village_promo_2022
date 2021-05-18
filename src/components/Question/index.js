@@ -23,8 +23,6 @@ const Question = (props) => {
         <button disabled={person.status !== INITIAL} key={id} className={className} onClick={onClick}>
             <p className={styles.text}>
                 {person.text}
-                <br />
-                {id}
             </p>
         </button>
     );

@@ -2,20 +2,23 @@ import { createSlice } from '@reduxjs/toolkit'
 
 import {COUNT} from '../../constants';
 
+import MOCK from '../person/data';
+
+const queue = [...MOCK];
+
 export const QuestionState = {};
 
 for (let i = 0; i < COUNT; i++) {
     for (let j = 0; j < COUNT; j++) {
         const id = `${i}_${j}`;
+        const person = queue.pop();
 
         QuestionState[id] = {
             id,
-            text: `Left or right`,
-            answers: [
-                `Left${id}`,
-                `Rigth${id}`,
-            ],
-            rightAnswer: 0,
+            text: `Кем был ${person.name}`,
+            answers: person.answers,
+            rightAnswer: person.rightAnswer,
+            notRight: person.notRight,
         }
     }
 }

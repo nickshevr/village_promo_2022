@@ -2,15 +2,20 @@ import { createSlice } from '@reduxjs/toolkit'
 
 import {COUNT, INITIAL, ANSWERED} from '../../constants';
 
+import MOCK from './data';
+
+const queue = [...MOCK];
+
 export const PersonState = {};
 
 for (let i = 0; i < COUNT; i++) {
     for (let j = 0; j < COUNT; j++) {
         const id = `${i}_${j}`;
+        const person = queue.pop();
 
         PersonState[id] = {
             id,
-            text: `Person`,
+            text: person.name,
             status: INITIAL,
             questionId: id,
         }
