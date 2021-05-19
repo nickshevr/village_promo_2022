@@ -60,7 +60,11 @@ const PopupContent = ({currentQuestionId}) => {
 
     return (
         <div className={styles.root}>
-            {person.status === FAILED && <Text>{question.notRight}</Text>}
+            {person.status === FAILED &&
+                <Text style={{textAlign: 'center'}}>
+                    {question.notRight}
+                </Text>
+            }
             {person.status === ANSWERED && <Text>Верно!</Text>}
             {person.status !== INITIAL &&
                 <button className={styles.button}  onClick={nextClick}>

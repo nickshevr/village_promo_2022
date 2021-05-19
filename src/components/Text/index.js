@@ -5,7 +5,7 @@ import * as styles from './styles.module.css';
 
 const cx = classNames.bind(styles);
 
-const Text = ({children, size = 'l', theme = 'black'}) => {
+const Text = ({style, children, size = 'l', theme = 'black'}) => {
     const className = cx({
         root: true,
         [theme]: true,
@@ -13,7 +13,7 @@ const Text = ({children, size = 'l', theme = 'black'}) => {
     });
 
     return (
-        <p className={className}>
+        <p style={style} className={className}>
             {children}
         </p>
     );
