@@ -13,7 +13,8 @@
     ifrm.setAttribute("src", isMobile ? mobileSrc : desktopSrc);
     ifrm.id = 'village_promo_frame';
     ifrm.style.width = "100%";
-    ifrm.style.height = "700px";
+    ifrm.style.height = isMobile ? "500px" : "700px";
+    ifrm.style.border = "none";
     ifrm.scrolling = "no";
 
     var place = document.getElementById('village_promo_800');

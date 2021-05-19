@@ -14,6 +14,8 @@ const RestartButton = () => {
         alignContent: 'center',
         justifyContent: 'center',
         alignItems: 'center',
+        margin: '0 auto',
+        borderWidth: '0',
     };
 
     return (

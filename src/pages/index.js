@@ -25,7 +25,6 @@ const IndexPage = () => {
 
     return (
       <div id='main'>
-          <Background />
           <Content>
               {
                   rows.map((data, i) =>
@@ -39,10 +38,10 @@ const IndexPage = () => {
                       </Row>
                   )
               }
-            <div style={{'marginTop': '20px'}}>
-                <RestartButton />  
-            </div>
           </Content>
+          <div style={{'marginTop': '20px'}}>
+                <RestartButton />  
+          </div>
           <QuestionPopup />
           <WinPopup />
       </div>
