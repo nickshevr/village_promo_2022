@@ -1,5 +1,25 @@
-<script>
-    var allowedOrigins = ['http://127.0.0.1:5500', 'http://localhost:4200', 'https://villagepromomaster.gatsbyjs.io/', 'https://www.the-village.ru', 'https://old.the-village.ru'];
+  <div id='village_promo_800'>
+  </div>
+  <script>
+    var allowedOrigins = ['http://127.0.0.1:5500', 'http://localhost:4200', 'https://www.the-village.ru', 'https://old.the-village.ru'];
+    var isMobile = window.outerWidth < 600;
+    var mobileSrc = 'https://villagepromomaster.gatsbyjs.io/';
+    var desktopSrc = 'https://villagepromodesktop.gatsbyjs.io/';
+    allowedOrigins.push(mobileSrc);
+    allowedOrigins.push(desktopSrc);
+    console.log('isMobile', isMobile);
+
+    var ifrm = document.createElement("iframe");
+    ifrm.setAttribute("src", isMobile ? mobileSrc : desktopSrc);
+    ifrm.id = 'village_promo_frame';
+    ifrm.style.width = "100%";
+    ifrm.style.height = "700px";
+    ifrm.scrolling = "no";
+
+    var place = document.getElementById('village_promo_800');
+
+    place.appendChild(ifrm);
+
     window.addEventListener('message', function (e) {
       if (!allowedOrigins.includes(e.origin)) {
         return;
@@ -18,13 +38,3 @@
       }
     });
   </script>
-  <style> 
-    .quizmachine__village-yota-mem {
-      border: none;
-    }
-  </style>
-  
-  <iframe id="abc71c54-5a81-56dc-b9a7-1dd21d44a70a" class="quizmachine__village-yota-mem" 
-    src="https://villagepromomaster.gatsbyjs.io/" 
-    scrolling="no" width="100%" height="700px">
-  </iframe>
