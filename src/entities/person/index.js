@@ -43,16 +43,22 @@ export const personSlice = createSlice({
             if (status === ANSWERED) {
                 let gameEndedRow = true;
                 let gameEndedColumn = true;
+                let gameEndedMainDiag = true;
+                let gameEndedSubDiag = true;
 
                 for (let i = 0; i < COUNT; i++) {
                     const rowId = `${row}_${i}`;
                     const columnId = `${i}_${column}`;
+                    const subDiag =  `${COUNT-i-1}_${i}`;
+                    const mainDiag = `${i}_${i}`;
 
                     gameEndedRow = gameEndedRow && state.collection[rowId].status === ANSWERED;
                     gameEndedColumn = gameEndedColumn && state.collection[columnId].status === ANSWERED;
+                    gameEndedMainDiag = gameEndedMainDiag && state.collection[mainDiag].status === ANSWERED;
+                    gameEndedSubDiag = gameEndedSubDiag && state.collection[subDiag].status === ANSWERED;
                 }
 
-                state.gameEnded = gameEndedRow || gameEndedColumn;
+                state.gameEnded = gameEndedRow || gameEndedColumn || gameEndedMainDiag || gameEndedSubDiag;
             }
         },
         returnInitialState: () => {
