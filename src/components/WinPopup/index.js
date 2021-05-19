@@ -3,6 +3,7 @@ import React from "react";
 import {useSelector} from 'react-redux';
 
 import Text from '../Text';
+import Link from '../Link';
 import {customStyles} from '../QuestionPopup';
 
 const gradientStyles = {
@@ -33,16 +34,26 @@ const WinPopup = () => {
             isOpen={gameEnded}
             style={merged}
         >
-        <div style={style}>
-            <Text theme='white'>
-                Бинго! 
-                <br />
-                <br />
-    Вы собрали полную линию правильных ответов о достижениях значимых для истории города нижегородцах. <br /> 
-    Всего в списке проекта «Имя Нижнего» 30 героев важных не только для истории Нижнего Новгорода, но и всей страны и даже мира, отобранных операторами проекта вместе экспертами, Центром 800, Министерством культуры Нижегородской области и НГИАМЗ. 
-    Успейте проголосовать за того, кого по вашему мнению должны помнить и знать!
-            </Text>
-        </div>
+            <div style={style}>
+                <Text theme='white'>
+                    Бинго! 
+                    <br />
+                    Вы собрали полную линию верных ответов о героях Нижнего и их достижениях.
+                </Text>
+                <div>
+                    <Text theme='white'>
+                        Заходите на сайт&nbsp;
+                        <Link href='http://name.nizhny800.ru/'>
+                                name.nizhny800.ru
+                        </Link>
+                            , знакомьтесь подробнее с важными для города именами и&nbsp;
+                        <Link href='http://name.nizhny800.ru/#name'>
+                                голосуйте 
+                        </Link>
+                        &nbsp;за одного из 30 героев, которые попали в список проекта «Имя Нижнего»! Все вместе мы выберем 9 имен, которые станут частью праздничной программы 800-летия!
+                    </Text>
+                </div>
+            </div>
         </ReactModal>
     );
 };
