@@ -18,6 +18,14 @@ const merged = {
     },
 };
 
+const firstPopup = () => {
+    return <Text theme='white'>
+        Поздравляем!
+        <br /> 
+        Вы собрали полную линию верных ответов и стали одним из 30ти бинго-победителей. Забрать специальный приз можно в пышечной «Вспышка» по адрес ул. Алекссевская д. 11, просто назвав секретную фразу «Я знаю новых героев Нижнего!». 
+    </Text>
+};
+
 const WinPopup = () => {
     const gameEnded = useSelector((state) => state.person.gameEnded);
     const style = {
@@ -46,7 +54,7 @@ const WinPopup = () => {
                         <Link href='http://name.nizhny800.ru/'>
                                 name.nizhny800.ru
                         </Link>
-                            , знакомьтесь подробнее с важными для города именами и&nbsp;
+                            , знакомьтесь с важными для города именами и&nbsp;
                         <Link href='http://name.nizhny800.ru/#name'>
                                 голосуйте 
                         </Link>
