@@ -1,7 +1,11 @@
 button {
-    margin: 0px;
-    padding: 2px;
+    padding: 1px;
+    border-style: outset;
+    border-width: 2px;
+    border-color: rgb(118, 118, 118);
 }
+
+button:focus { outline: none; }
 
 @media (max-width: 480px) {
     .root {
@@ -40,4 +44,3 @@ button {
 .failed {
     background: #2c1f4e;
 }
-  

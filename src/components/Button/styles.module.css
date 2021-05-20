@@ -1,6 +1,7 @@
 .root {
     border-radius: 20px;
     min-width: 25vw;
-    height: 7vh;
+    min-height: 8vh;
     background-color: rgb(237, 114, 99);
+    border: none;
 }
