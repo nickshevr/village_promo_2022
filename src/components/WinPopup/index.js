@@ -68,7 +68,7 @@ const WinPopup = () => {
             style={merged}
         >
             <div style={style}>
-                <FirstPopup />
+                <DefaultPopup />
             </div>
         </ReactModal>
     );
