@@ -35,7 +35,7 @@ button:focus { outline: none; }
 }
 
 .initial {
-    background: #94CF1C;
+    background: #FF0E52;
 }
 
 .answered {
@@ -43,5 +43,6 @@ button:focus { outline: none; }
 }
 
 .failed {
-    background: #FF0E52;
+    background: #C6E58D;
+    border: 5px solid #94CF1C;
 }
