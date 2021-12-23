@@ -35,11 +35,11 @@ button:focus { outline: none; }
 }
 
 .initial {
-    background: #FF0E52;
+    background: #94CF1C;
 }
 
 .answered {
-    background: #566f10;
+    background: #FF0E52;
 }
 
 .failed {
