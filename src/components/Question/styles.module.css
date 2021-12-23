@@ -1,8 +1,7 @@
 button {
     padding-left: 2px;
-    border-style: outset;
-    border-width: 2px;
-    border-color: rgb(118, 118, 118);
+    border-radius: 5px;
+    border-style: none;
 }
 
 button:focus { outline: none; }
@@ -25,7 +24,7 @@ button:focus { outline: none; }
     .root {
         width: 20vh;
         height: 20vh;
-        margin: 4px;
+        margin: 6px;
     }
 
     .text {
@@ -36,13 +35,13 @@ button:focus { outline: none; }
 }
 
 .initial {
-    background: transparent;
+    background: #94CF1C;
 }
 
 .answered {
-    background: #ed7263;
+    background: #566f10;
 }
 
 .failed {
-    background: #2c1f4e;
+    background: #FF0E52;
 }

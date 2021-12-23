@@ -3,6 +3,11 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: url('https://i.ibb.co/3YMbMqC/background.jpg');
-    background-size: cover;
+    background: #C6E58D;
+    border: 10px solid #94CF1C;
+    border-radius: 5px;
+}
+
+.container {
+    padding: 25px;
 }
