@@ -13,6 +13,9 @@ const PopupContent = ({currentQuestionId}) => {
     const question = useSelector((state) => state.question.collection[currentQuestionId]);
     const person = useSelector((state) => state.person.collection[currentQuestionId]);
     const rightAnswer = question.rightAnswer;
+    const title = question.title;
+    const questionText = question.questionText;
+    const text = question.question;
     const dispatch = useDispatch();
 
     const leftButtonClick = () => {
@@ -37,20 +40,26 @@ const PopupContent = ({currentQuestionId}) => {
 
     const choose = (
         <React.Fragment>
-            <Text size='l'>
-                {question.text}
+            <Text size='m' style={{color: '#FF0E52'}}>
+                {title}
+            </Text>
+            <Text size='m'>
+                {questionText}
+            </Text>
+            <Text size='m' style={{color: '#FF0E52'}}>
+                {text}
             </Text>
             <div className={styles.questions}>
                 <button className={styles.button} onClick={leftButtonClick}>
-                    <Text size='l' theme='white'>
+                    <Text size='m' theme='white'>
                         {question.answers[0]}
                     </Text>
                 </button>
-                <Text size='l'>
+                <Text size='m' style={{color: '#94CF1C'}}>
                     или
                 </Text>
                 <button className={styles.button}  onClick={rightButtonClick}>
-                    <Text size='l' theme='white'>
+                    <Text size='m' theme='white'>
                         {question.answers[1]}
                     </Text>
                 </button>

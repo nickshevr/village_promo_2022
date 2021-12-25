@@ -12,13 +12,17 @@ for (let i = 0; i < COUNT; i++) {
     for (let j = 0; j < COUNT; j++) {
         const id = `${i}_${j}`;
         const person = queue.pop();
-        const prefix = person.gender
-            ? 'Кем была'
-            : 'Кем был';
+        const title = person.name;
+        const questionText = person.question.split('.').slice(0, -1).join('');
+        const question = person.question.split('.').slice(-1).join('');
+
+        console.log(question);
 
         QuestionState[id] = {
             id,
-            text: `${prefix} ${person.name.trim()}?`,
+            title,
+            questionText,
+            question,
             answers: person.answers,
             rightAnswer: person.rightAnswer,
             notRight: person.notRight,

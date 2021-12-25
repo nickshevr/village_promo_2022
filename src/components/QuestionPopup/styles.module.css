@@ -16,6 +16,7 @@
 }
 
 .button {
+    min-width: 500px;
     border: none;
     border-radius: 20px;
     background: #FF0E52;
