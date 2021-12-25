@@ -106,12 +106,12 @@ const QuestionPopup = () => {
 
 
     return (
-        <ReactModal
+        isOpen && <div
             isOpen={isOpen}
-            style={customStyles}
+            className={styles.page}
         >
             {currentQuestionId && <PopupContent currentQuestionId={currentQuestionId} />}
-        </ReactModal>
+        </div>
     );
 };
 

@@ -13,6 +13,7 @@ import RestartButton from '../containers/restartButton';
 import './styles.css'
 
 import {COUNT} from '../constants';
+import {useSelector} from "react-redux";
 
 ReactModal.setAppElement('#___gatsby')
 
@@ -23,15 +24,19 @@ const IndexPage = () => {
         rows.push(Array(COUNT).fill(null));
     }
 
+    const currentQuestionId = useSelector((state) => state.question.currentQuestion);
+    //const dispatch = useDispatch();
+    const isOpen = currentQuestionId !== null;
+
     return (
       <div id='main'>
-          <Content>
+          {!isOpen && <Content>
               {
                   rows.map((data, i) =>
                       <Row key={i}>
                           {
                               data.map((_, j) => (
-                                    <Question key={`${i}_${j}`} id={`${i}_${j}`}/>
+                                      <Question key={`${i}_${j}`} id={`${i}_${j}`}/>
                                   )
                               )
                           }
@@ -39,10 +44,13 @@ const IndexPage = () => {
                   )
               }
           </Content>
-          <div style={{'marginTop': '20px'}}>
-                <RestartButton />  
-          </div>
-          <QuestionPopup />
+          }
+          {
+              !isOpen && <div style={{'marginTop': '20px'}}>
+                  <RestartButton />
+              </div>
+          }
+          {isOpen && <QuestionPopup />}
           <WinPopup />
       </div>
     )

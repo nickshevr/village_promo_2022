@@ -21,3 +21,10 @@
     border-radius: 20px;
     background: #FF0E52;
 }
+
+.page {
+    border: 10px solid #94CF1C;
+    border-radius: 5px;
+    padding: 25px;
+    max-width: 1200px;
+}
