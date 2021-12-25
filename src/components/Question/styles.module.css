@@ -15,7 +15,6 @@ button:focus { outline: none; }
 
     .text {
         padding-left: 2px;
-        text-align: left;
         font-size: 3.5vw;
     }
 }
@@ -29,7 +28,6 @@ button:focus { outline: none; }
 
     .text {
         padding-left: 4px;
-        text-align: left;
         font-size: 3vh;
     }
 }
