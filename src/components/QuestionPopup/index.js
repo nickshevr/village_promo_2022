@@ -46,7 +46,7 @@ const PopupContent = ({currentQuestionId}) => {
             <Text size='m'>
                 {questionText}
             </Text>
-            <Text size='m' style={{color: '#FF0E52'}}>
+            <Text size='m' style={{color: '#FF0E52', textAlign: 'center'}}>
                 {text}
             </Text>
             <div className={styles.questions}>

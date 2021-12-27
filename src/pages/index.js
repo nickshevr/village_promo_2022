@@ -45,12 +45,8 @@ const IndexPage = () => {
               }
           </Content>
           }
-          {
-              !isOpen && <div style={{'marginTop': '20px'}}>
-                  <RestartButton />
-              </div>
-          }
           {isOpen && <QuestionPopup />}
+          <WinPopup />
       </div>
     )
 };
