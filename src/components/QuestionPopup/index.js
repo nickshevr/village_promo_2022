@@ -107,7 +107,6 @@ const QuestionPopup = () => {
 
     return (
         isOpen && <div
-            isOpen={isOpen}
             className={styles.page}
         >
             {currentQuestionId && <PopupContent currentQuestionId={currentQuestionId} />}

@@ -29,6 +29,20 @@ const INITIAL_STATE = {
     loose: false,
 };
 
+const AVAILIBALE_ROWS = {
+    1: true,
+    2: true,
+    3: true,
+    0: true,
+}
+
+const AVAILIBALE_COLUMNS = {
+    1: true,
+    2: true,
+    3: true,
+    0: true,
+}
+
 export const personSlice = createSlice({
     name: 'person',
     initialState: INITIAL_STATE,
@@ -62,12 +76,16 @@ export const personSlice = createSlice({
                 state.gameEnded = gameEndedRow || gameEndedColumn || gameEndedMainDiag || gameEndedSubDiag;
             }
 
-            if (status === FAILED || status === ANSWERED) {
-                const stillInGame = Object.values(state.collection)
-                    .map(p => p.status)
-                    .includes(INITIAL);
+            if (status === FAILED) {
+                AVAILIBALE_ROWS[row] = false;
+                AVAILIBALE_COLUMNS[column] = false;
 
-                if (!stillInGame) {
+
+                if (!Object.values(AVAILIBALE_ROWS).includes(true)) {
+                    state.loose = true;
+                }
+
+                if (!Object.values(AVAILIBALE_COLUMNS).includes(true)) {
                     state.loose = true;
                 }
             }
