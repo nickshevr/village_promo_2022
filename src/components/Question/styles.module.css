@@ -2,20 +2,22 @@ button {
     padding-left: 2px;
     border-radius: 5px;
     border-style: none;
+    flex-basis: 0;
+    flex-grow: 1;
 }
 
 button:focus { outline: none; }
 
 @media (max-width: 480px) {
     .root {
-        width: 24vw;
-        height: 24vw;
+        width: 20vw;
+        height: 20vw;
         margin: 2px;
     }
 
     .text {
         padding-left: 2px;
-        font-size: 3.5vw;
+        font-size: 3vw;
     }
 }
 

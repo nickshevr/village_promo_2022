@@ -51,7 +51,6 @@ const IndexPage = () => {
               </div>
           }
           {isOpen && <QuestionPopup />}
-          <WinPopup />
       </div>
     )
 };
