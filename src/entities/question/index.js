@@ -16,8 +16,6 @@ for (let i = 0; i < COUNT; i++) {
         const questionText = person.question.split('.').slice(0, -1).join('');
         const question = person.question.split('.').slice(-1).join('');
 
-        console.log(question);
-
         QuestionState[id] = {
             id,
             title,
