@@ -4,10 +4,16 @@
     align-items: center;
     flex-direction: column;
     background: #C6E58D;
-    border: 10px solid #94CF1C;
+    border: 5px solid #94CF1C;
     border-radius: 5px;
 }
 
 .container {
     padding: 25px;
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 6px;
+    }
 }
