@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-import {COUNT, INITIAL, ANSWERED} from '../../constants';
+import {COUNT, INITIAL, ANSWERED, FAILED} from '../../constants';
 
 import MOCK from './data';
 
@@ -26,6 +26,7 @@ const INITIAL_STATE = {
     collection: PersonState,
     gameEnded: false,
     gameStarted: false,
+    loose: false,
 };
 
 export const personSlice = createSlice({
@@ -59,6 +60,16 @@ export const personSlice = createSlice({
                 }
 
                 state.gameEnded = gameEndedRow || gameEndedColumn || gameEndedMainDiag || gameEndedSubDiag;
+            }
+
+            if (status === FAILED || status === ANSWERED) {
+                const stillInGame = Object.values(state.collection)
+                    .map(p => p.status)
+                    .includes(INITIAL);
+
+                if (!stillInGame) {
+                    state.loose = true;
+                }
             }
         },
         returnInitialState: () => {

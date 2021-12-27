@@ -36,10 +36,12 @@ button:focus { outline: none; }
 
 .initial {
     background: #94CF1C;
+    border: 2px solid #94CF1C;
 }
 
 .answered {
     background: #FF0E52;
+    border: 2px solid #FF0E52;
 }
 
 .failed {

@@ -6,9 +6,7 @@ import Row from '../components/Row';
 import Question from '../components/Question';
 import QuestionPopup from '../components/QuestionPopup';
 import WinPopup from '../components/WinPopup';
-import Background from '../components/Background';
-
-import RestartButton from '../containers/restartButton';
+import LoosePopup from '../components/LoosePopup';
 
 import './styles.css'
 
@@ -47,6 +45,7 @@ const IndexPage = () => {
           }
           {isOpen && <QuestionPopup />}
           <WinPopup />
+          <LoosePopup />
       </div>
     )
 };
