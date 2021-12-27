@@ -44,5 +44,5 @@ button:focus { outline: none; }
 
 .failed {
     background: #C6E58D;
-    border: 5px solid #94CF1C;
+    border: 2px solid #94CF1C;
 }
