@@ -29,19 +29,17 @@ const INITIAL_STATE = {
     loose: false,
 };
 
-const AVAILIBALE_ROWS = {
+const recreateAvailable = () => ({
     1: true,
     2: true,
     3: true,
     0: true,
-}
+});
 
-const AVAILIBALE_COLUMNS = {
-    1: true,
-    2: true,
-    3: true,
-    0: true,
-}
+let AVAILABLE_ROWS = recreateAvailable();
+
+let AVAILABLE_COLUMNS = recreateAvailable();
+
 
 export const personSlice = createSlice({
     name: 'person',
@@ -77,20 +75,23 @@ export const personSlice = createSlice({
             }
 
             if (status === FAILED) {
-                AVAILIBALE_ROWS[row] = false;
-                AVAILIBALE_COLUMNS[column] = false;
+                AVAILABLE_ROWS[row] = false;
+                AVAILABLE_COLUMNS[column] = false;
 
 
-                if (!Object.values(AVAILIBALE_ROWS).includes(true)) {
+                if (!Object.values(AVAILABLE_ROWS).includes(true)) {
                     state.loose = true;
                 }
 
-                if (!Object.values(AVAILIBALE_COLUMNS).includes(true)) {
+                if (!Object.values(AVAILABLE_COLUMNS).includes(true)) {
                     state.loose = true;
                 }
             }
         },
         returnInitialState: () => {
+            AVAILABLE_COLUMNS = recreateAvailable();
+            AVAILABLE_ROWS = recreateAvailable();
+
             return INITIAL_STATE;
         }
     },

@@ -1,6 +1,7 @@
 import ReactModal from "react-modal";
 import React from "react";
 import {useSelector} from 'react-redux';
+import RestartButton from '../../containers/restartButton';
 
 import Text from '../Text';
 import {customStyles} from '../QuestionPopup';
@@ -25,8 +26,9 @@ const DefaultPopup = () => {
                 Тренируемся дальше!
             </Text>
             <Text>
-                Пока что во&nbsp;всех линиях бинго, есть ошибки. Но&nbsp;кое-что вам удалось угадать, а&nbsp;значит уже можно доверить своей интуиции рассылку подарков самым родным и&nbsp;близким! А&nbsp;заботу о&nbsp;качественной доставке возьмет Boxberry не&nbsp;только возьмет на&nbsp;себя, но&nbsp;и&nbsp;предоставит скидку в&nbsp;30% по&nbsp;промокоду &laquo;вилладж_пипл&raquo;
+                Пока что во&nbsp;всех линиях бинго, есть ошибки. Но&nbsp;кое-что вам удалось угадать, а&nbsp;значит уже можно доверить своей интуиции рассылку подарков самым родным и&nbsp;близким! А&nbsp;заботу о&nbsp;качественной доставке Boxberry не&nbsp;только возьмет на&nbsp;себя, но&nbsp;и&nbsp;предоставит скидку в&nbsp;30% по&nbsp;промокоду &laquo;вилладж_пипл&raquo;
             </Text>
+            <RestartButton />
         </React.Fragment>
     )
 };
