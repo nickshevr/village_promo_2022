@@ -13,7 +13,7 @@ for (let i = 0; i < COUNT; i++) {
         const id = `${i}_${j}`;
         const person = queue.pop();
         const title = person.name;
-        const questionText = person.question.split('.').slice(0, -1).join('');
+        const questionText = person.question.split('.').slice(0, -1).join('. ') + '.';
         const question = person.question.split('.').slice(-1).join('');
 
         QuestionState[id] = {
